@@ -123,13 +123,14 @@ history = modelo.fit(
 
 print("Modelo entrenado!");
 
-#Exportar el modelo al explorador! (Mas detalle de esto en en mi video de exportacion: https://youtu.be/JpE4bYyRADI )
+#Exportar el modelo
 modelo.save('numeros_conv.h5')
 
-#Convertirlo a tensorflow.js
+#Descargar tensorflow.js
 !pip install tensorflowjs
 
 #Crear una carpeta donde se almacenen los archivos generados
 !mkdir carpeta_salida
 
+#Exportar 
 !tensorflowjs_converter --input_format keras numeros_conv.h5 carpeta_salida
